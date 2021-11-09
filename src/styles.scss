@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Sora&display=swap');
+
+$background-colour: #1A1A1D;
+$text-colour: white;
+$accent: #C3073F;
+$accent2: #000000;
+$accent3: #97132e;
+$accent4: #4E4E50;
+$breakpoint: 576px;
+
+@mixin panel-styling {
+  border-radius: 10%;
+  border: solid white;
+  background-color: black;
+  color: white;
+}
+
+@mixin btn-styling {
+  cursor: pointer;
+  border-radius: 5%;
+  border: solid $accent;
+  background-color: $accent4;
+  color: white;
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0;
+    background-color: #ffffff5a;
+  }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#container {
+  font-family: 'Sora', sans-serif;
+  overflow-y: hidden;
+  * {
+    font-size: 1em;
+  }
+  background-color: $background-colour;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #bank-display {
+    @include panel-styling;
+    padding: 5%;
+    margin: 3%;
+  }
+  #sound-display {
+    @include panel-styling;
+    padding: 5%;
+    margin: 3%;
+  }
+  #drum-machine {
+    width: 90%;
+    height: 100%;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #drumpad-container {
+    width: 90%;
+    padding-left: 1%;
+    max-height: 50%;
+    &:after {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+    .drum-pad {
+      font-family: 'Sora', sans-serif;
+      font-size: 1em;
+      margin: 1%;
+      width: 31%;
+      height: 31%;
+      @include btn-styling;
+    }
+    .drum-pad-clicked {
+      font-family: 'Sora', sans-serif;
+      font-size: 1em;
+      margin: 1%;
+      width: 31%;
+      height: 31%;
+      //@include btn-styling;
+    }
+  }
+
+  #switch-kit-btn {
+    padding: 2%;
+    font-family: 'Sora', sans-serif;
+    font-size: 1em;
+    @include btn-styling;
+  }
+  #slider-container {
+    margin-top: 3%;
+    #slider {
+      cursor: pointer;
+    }
+  }
+  #label {
+    @include panel-styling;
+    margin-top: 1%;
+    padding: 2%;
+  }
+}
