@@ -48,6 +48,16 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  #drum-machine {
+    border: solid red;
+    width: 90%;
+    height: 90%;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   #bank-display {
     @include panel-styling;
     padding: 5%;
@@ -57,15 +67,6 @@ a {
     @include panel-styling;
     padding: 5%;
     margin: 3%;
-  }
-  #drum-machine {
-    width: 90%;
-    height: 100%;
-    max-width: 30rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
   #drumpad-container {
     width: 90%;
