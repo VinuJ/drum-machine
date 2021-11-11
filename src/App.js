@@ -78,11 +78,11 @@ const VolumeSlider = (props) => {
       type='range'
       min={0}
       max={1}
-      step={0.01}
+      step={0.1}
       value={props.volume}
       onChange={event => {
         props.setVolume(event.target.valueAsNumber);
-        props.setVolumeDisplay(`Volume: ${parseInt(props.volume * 100)}`);
+        props.setVolumeDisplay(`Volume: ${parseInt(props.volume * 10)}`);
         setTimeout(() => props.setVolumeDisplay('Volume'), 3000)
       } } /></>
   )
